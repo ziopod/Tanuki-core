@@ -1,0 +1,12 @@
+{{#posts}}
+<article>
+{{#excerpt}}
+	<h1>{{title}}</h1>
+	{{{excerpt}}}
+{{/excerpt}}
+{{^excerpt}}
+	{{{headline}}}
+{{/excerpt}}
+<a href="{{url}}">Read</a>
+</article>
+{{/posts}}
