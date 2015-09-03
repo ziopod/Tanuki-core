@@ -21,7 +21,7 @@ class Controller_Dropbox extends Controller{
 
 		if ( ! Cookie::get('dpx_access_token'))
 		{
-			$this->response->body('Veuillez vous connecté : <a href="' . URL::base(TRUE, TRUE) . 'dropbox/generatetoken">Connexion à Dropbox<a/>');		
+			$this->response->body('Veuillez spécifié le access token de l\'application Tanuki Dropbox dans le fichier de configuration tanuki.dropbox.access_token');		
 		}
 		else
 		{
