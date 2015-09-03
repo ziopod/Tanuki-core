@@ -26,7 +26,14 @@ class Controller_Sync extends Controller {
 		$remote = Kohana::$config->load('tanuki.git.remote');
 		$branch = Kohana::$config->load('tanuki.git.branch');
 		// Pull from bare depot
-		exec("git pull $remote $branch");
+		$output = array();
+		$return_var = NULL;
+		exec("git pull $remote $branch", $output, $return_var);
+
+		if ( ! empty($output))
+		{
+			Log::instance()->add(Log::DEBUG, implode(', ', $output) . $return_var);
+		}
 
 		// Back to original dir
 		chdir($original_dir);
