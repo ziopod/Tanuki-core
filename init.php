@@ -19,6 +19,16 @@ Route::set('read', 'read/<slug>')
 	));
 
 /**
+* Welcome route (default route)
+**/
+Route::set('welcome', '(<controller>(/<action>(/<slug>)))')
+	->defaults(array(
+		'controller'	=> 'Pages',
+		'action'		=> 'read',
+		'slug'			=> 'welcome',
+	));
+
+/**
 * Autoload pages
 **/
 Route::set('pages', '<slug>', array(
@@ -29,14 +39,4 @@ Route::set('pages', '<slug>', array(
 	->defaults(array(
 		'controller'	=> 'Pages',
 		'action'		=> 'read',
-	));
-
-/**
-* Welcome route (default route)
-**/
-Route::set('welcome', '(<controller>(/<action>(/<slug>)))')
-	->defaults(array(
-		'controller'	=> 'Pages',
-		'action'		=> 'read',
-		'slug'			=> 'welcome',
 	));
