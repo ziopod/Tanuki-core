@@ -3,6 +3,10 @@
 /**
 * Dropbox tests
 *
+* Pour une synchro entre plusieru comptes Dropbox, cf. :
+*  - https://www.dropbox.com/developers/core/docs#copy_ref
+*  - https://www.dropbox.com/developers/core/docs#fileops-copycat
+*
 * @package		Tanuki
 * @category		Controller
 * @author		Ziopod <ziopod@gmail.com>

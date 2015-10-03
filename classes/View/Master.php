@@ -25,8 +25,8 @@ class View_Master {
 			'url'		=> "http://ziopod.com",
 		),
 		'license'		=> array(
-			'name'		=> 'Default License for your content',
-			'url'		=> 'Link to your licence',
+			'name'		=> 'MIT',
+			'url'		=> 'http://opensource.org/licenses/mit-license.php',
 		),
 	);
 
@@ -124,14 +124,20 @@ class View_Master {
 	* @return 	array
 	**/
 	public function navigation(){
+		return array(
+			array(
+				'url'	=> 'http://example.com',
+				'name'	=> 'Example link navigation',
+			),
+		);
 		return array();
 	}
 
 	/**
 	* Test if navigation have some data
-	* Usefull for contextual HTML tags like `<nav>` or `<ul>`
+	* Usefull for contextual HTML tags like `<ul>`
 	**/
-	public function as_navigation()
+	public function has_navigation()
 	{
 		return (bool) $this->navigation();
 	}
