@@ -123,14 +123,14 @@ class View_Master {
 	*
 	* @return 	array
 	**/
-	public function navigation(){
+	public function navigation()
+	{
 		return array(
 			array(
 				'url'	=> 'http://example.com',
 				'name'	=> 'Example link navigation',
 			),
 		);
-		return array();
 	}
 
 	/**
