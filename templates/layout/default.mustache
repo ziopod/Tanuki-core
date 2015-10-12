@@ -2,15 +2,9 @@
 <html lang="{{lang}}">
 	<head>
 		<meta charset="utf-8" />
-		<title>{{title}}</title>
-		{{#site.metas}}{{#content}}<meta name="{{name}}" content="{{content}}"/>{{/content}}{{/site.metas}}
-		{{#styles}}<link rel="stylesheet" href="{{src}}" media="{{media}}" />{{/styles}}
+		<title>Tanuki core default layout</title>
 	</head>
-	<body {{#custom_css}}class="{{custom_css}}"{{/custom_css}}>
-		{{>layout/header}}
-		{{>layout/navigation}}
+	<body>
 		{{>content}}
-		{{>layout/footer}}
-		{{#scripts}}<script type="text/javascript" src="{{src}}"></script>{{/scripts}}
 	</body>
 </html>
