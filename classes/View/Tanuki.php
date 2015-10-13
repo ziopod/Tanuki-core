@@ -14,6 +14,11 @@
 class View_Tanuki {
 
 	/**
+	* @vars Autoload content
+	**/
+	public $autoload = TRUE;
+
+	/**
 	* @vars Provide custom css class selector if needed (cf. layout/default.mustache)
 	**/
 	public $custom_css;
@@ -26,24 +31,27 @@ class View_Tanuki {
 	public function __construct()
 	{
 
-		try
+		if ($this->autoload)
 		{
-			$model_name = Inflector::singular(strtolower(Request::current()->controller()));
-			$model = 'Model_' . ucfirst($model_name);
-
-			/**
-			* Assign model to a variable named as the controller name
-			**/
-			$this->$model_name = new $model(Request::initial()->param('slug'));
-		}
-		catch (Kohana_Exception $e)
-		{
-			if ($slug = Request::initial()->param('slug'))
+			try
 			{
-				throw HTTP_Exception::factory(404, __("Unable to find page :slug"), array(':slug' => $slug));		
+				$model_name = Inflector::singular(strtolower(Request::current()->controller()));
+				$model = 'Model_' . ucfirst($model_name);
+
+				/**
+				* Assign model to a variable named as the controller name
+				**/
+				$this->$model_name = new $model(Request::initial()->param('slug'));
 			}
-			
-			throw HTTP_Exception::factory(404, __("Unable to find URI :uri"), array(':uri' => Request::initial()->uri()	));		
+			catch (Kohana_Exception $e)
+			{
+				if ($slug = Request::initial()->param('slug'))
+				{
+					throw HTTP_Exception::factory(404, __("Unable to find page :slug"), array(':slug' => $slug));		
+				}
+				
+				throw HTTP_Exception::factory(404, __("Unable to find URI :uri"), array(':uri' => Request::initial()->uri()	));		
+			}		
 		}
 	}
 
