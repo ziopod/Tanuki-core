@@ -14,14 +14,19 @@
 class View_Tanuki {
 
 	/**
-	* @vars Autoload content
+	* @var Autoload content
 	**/
 	public $autoload = TRUE;
 
 	/**
-	* @vars Provide custom css class selector if needed (cf. layout/default.mustache)
+	* @var Provide custom css class selector if needed (cf. layout/default.mustache)
 	**/
 	public $custom_css;
+
+	/**
+	* @var Store model name
+	**/
+	public $model_name;
 
 	/**
 	* Try to load Flatfile Model, based on url segment
@@ -37,6 +42,8 @@ class View_Tanuki {
 			{
 				$model_name = Inflector::singular(strtolower(Request::current()->controller()));
 				$model = 'Model_' . ucfirst($model_name);
+				// Store model name
+				$this->model_name = $model_name;
 
 				/**
 				* Assign model to a variable named as the controller name
