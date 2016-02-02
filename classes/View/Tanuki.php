@@ -111,6 +111,25 @@ class View_Tanuki {
 	}
 
 	/**
+	* Set HTML title tag
+	*
+	* @return	string
+	**/
+	public function title()
+	{
+		// Try to load title from model
+		$model_name = $this->model_name;
+
+		if (isset($this->$model_name->title))
+		{
+			return $this->$model_name->title;
+		}
+
+		// Instead use global config
+		return Kohana::$config->load('tanuki.tanuki.title');
+	}
+
+	/**
 	* Define main navigation
 	*
 	* Add your navigation like that:
