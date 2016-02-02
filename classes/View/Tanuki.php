@@ -126,7 +126,7 @@ class View_Tanuki {
 		}
 
 		// Instead use global config
-		return Kohana::$config->load('tanuki.tanuki.title');
+		return Arr::path($this->tanuki(), 'title');
 	}
 
 	/**
