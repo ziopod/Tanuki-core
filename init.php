@@ -47,7 +47,7 @@ Route::set('read', 'read/<slug>')
 
 Route::set('pages', 'pages(/<action>(/<slug>))')
 	->defaults(array(
-		'controller'	=> 'Pages',
+		'controller'	=> 'Page',
 		'action'		=> 'index',
 	));
 /**
