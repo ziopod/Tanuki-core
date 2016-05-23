@@ -40,9 +40,26 @@ class Model_Post extends Flatfile {
 	
 	/**
 	* Return specifics data
+	*
+	* @return string
 	**/
 	public function url()
 	{
 		return URL::base(TRUE, FALSE) . 'read/' . $this->slug;
+	}
+
+	/**
+	* Return a minimal string for post title
+	*
+	* @return string
+	**/
+	public function title()
+	{
+		if ( ! $this->title)
+		{
+			return ucfirst($this->slug);
+		}
+
+		return $this->title;
 	}
 }
