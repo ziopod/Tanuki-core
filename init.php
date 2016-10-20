@@ -3,21 +3,24 @@
 /**
 * Display posts
 **/
+/*
 Route::set('posts', 'posts(/<action>(/<slug>))')
 	->defaults(array(
 		'controller'	=> 'Posts',
 		'action'		=> 'index',
 	));
+*/
 
 /**
 * Short route for reading posts
 **/
+/*
 Route::set('read', 'read/<slug>')
 	->defaults(array(
 		'controller'	=> 'Posts',
 		'action'		=> 'read',
 	));
-
+*/
 /**
 * Display pages
 * This rule loads pages in the same way as "posts" rule.
@@ -45,17 +48,21 @@ Route::set('read', 'read/<slug>')
 *	));
 **/
 
+/*
 Route::set('pages', 'pages(/<action>(/<slug>))')
 	->defaults(array(
-		'controller'	=> 'Pages',
+		'controller'	=> 'Pagess',
 		'action'		=> 'index',
 	));
+*/
 /**
 * Welcome home route (catch route when you have nothing after your domain)
 **/
+/*
 Route::set('welcome', '')
 	->defaults(array(
-		'controller'	=> 'Pages',
+		'controller'	=> 'Pagess',
 		'action'		=> 'read',
 		'slug'			=> 'welcome',
 	));
+*/
