@@ -1,10 +1,10 @@
 {
 	"name": "ziopod/tanuki-core",
-	"type": "Kohana-module",
+	"type": "kohana-module",
 	"description": " Core Kohana module for Tanuki",
-	"Keyword": ["kohana", "Kohana module", "Tanuki"],
+	"keywords": ["kohana", "Kohana module", "Tanuki"],
 	"homepage": "http://ziopod.com",
-	"licence": "MIT",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Steve Beau",
